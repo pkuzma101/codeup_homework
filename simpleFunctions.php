@@ -20,9 +20,9 @@
         $d = strtolower($arrayOfStrings[3]);
         $e = strtolower($arrayOfStrings[4]);
 
-        echo "$a" . " " . "$b" . " " . "$c" . " " . "$d" . " " . "$e" . "." . PHP_EOL;
-    }
+        echo "$a" . " " . "$b" .  ", " . "$c" . " " . "$d" . " " . "$e" . "." . PHP_EOL;
 
+    }
 
     sentence($arrayOfStrings);
  
@@ -35,5 +35,34 @@
     // Write another function that will accept the array $numbers and return the minimum and maximum numbers in that array.
  
     // Can you make these into one function?
- 
+    //Create an array of numbers from which the randoms
+   
+    // function chance() {
+    //     $numbers = [];
+    //     for($a = 0; $a < 5; $a++) {
+    //         array_push($numbers, mt_rand(1, 100));
+    //     }
+    //     // echo [min($numbers), max($numbers)];
+    //     return $numbers;
+    // }
+
+    // echo chance();
+
+    function generateRandomInt() {
+        for($a = 0; $a < 5; $a++) {
+            $number = mt_rand(1, 100);
+            $arrayOfIntegers[] = $number;
+        }
+        return $arrayOfIntegers;
+    }
+
+    $numbers = generateRandomInt();
+    print_r($numbers);
+
+    $minimum = min($numbers);
+    $maximum = max($numbers);
+
+    echo "Minimum is: $minimum" . PHP_EOL;
+    echo "Maximum is: $maximum" . PHP_EOL;
+
 ?>
